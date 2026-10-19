@@ -76,7 +76,7 @@ export default async function VotePage({ searchParams }: { searchParams: Promise
           <div>
             <span className="caps caps--aqua eyebrow">Paradise Casting · private</span>
             <h1 className="h2" style={{ marginTop: 14 }}>Choose who <em className="chrome">comes to paradise</em></h1>
-            <p className="lead" style={{ marginTop: 14 }}>{live} {live === 1 ? "lady is" : "ladies are"} in the casting. You have {CASTING.voteLimit} hearts. The {CASTING.shortlist} ladies with the most votes are invited.</p>
+            <p className="lead" style={{ marginTop: 14 }}>{live} {live === 1 ? "lady is" : "ladies are"} in the casting. You have {CASTING.voteLimit} hearts. The {CASTING.shortlist} applicants with the most interest are shortlisted for invitations.</p>
           </div>
           <nav className="tabs" aria-label="Filter">
             {SHOWS.map((x) => <Link key={x.key} href={href({ show: x.key })} className={show === x.key ? "on" : ""} aria-current={show === x.key ? "page" : undefined}>{x.label}</Link>)}

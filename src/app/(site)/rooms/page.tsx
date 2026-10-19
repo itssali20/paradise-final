@@ -40,11 +40,11 @@ export default async function RoomsPage() {
               <span className="caps caps--aqua eyebrow" data-reveal>Compare</span>
               <h2 className="h2" style={{ marginTop: 18 }} data-split="words">Everything <em className="chrome">side by side</em></h2>
             </div>
-            <p className="lead" data-reveal>All packages include seven days and six nights, every Paradise Club event and the company of 200 elite singles. Bringing a lady from abroad? Add her at the companion rate.</p>
+            <p className="lead" data-reveal>All packages include seven days and six nights, eligible Paradise Club events and an exclusive gathering of international singles. Bringing a guest you met online? Add her at the guest rate.</p>
           </div>
           <div className="table-wrap" style={{ marginTop: 44 }} data-reveal>
             <table className="t">
-              <thead><tr><th>Room</th><th>Highlights</th><th className="num">From</th><th className="num">+ Lady</th><th /></tr></thead>
+              <thead><tr><th>Room</th><th>Highlights</th><th className="num">From</th><th className="num">+ Guest</th><th /></tr></thead>
               <tbody>
                 {ROOM_TIERS.map((t, i) => (
                   <tr key={t.name}>

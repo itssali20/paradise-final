@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const c = COMPETITIONS.find((x) => x.slug === slug);
-  return c ? { title: `${c.name} · ${c.prize} prize`, description: c.description } : { title: "Competition" };
+  return c ? { title: `${c.name} · proposed ${c.prize} grand prize`, description: c.description } : { title: "Competition" };
 }
 
 export default async function CompetitionPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,7 +25,7 @@ export default async function CompetitionPage({ params }: { params: Promise<{ sl
   return (
     <>
       <PageHero
-        eyebrow={`${c.prize} proposed first prize · ${c.night}`}
+        eyebrow={`Proposed ${c.prize} grand prize · ${c.night}`}
         title={<>{c.name.split(" ")[0]} <em className="chrome">{c.name.split(" ").slice(1).join(" ") || "Contest"}</em></>}
         lead={c.short}
         image={c.image}
@@ -43,7 +43,7 @@ export default async function CompetitionPage({ params }: { params: Promise<{ sl
             <div data-reveal><span className="caps caps--aqua">Eligibility</span><ul className="ticks" style={{ marginTop: 10 }}>{c.eligibility.map((x) => <li key={x}>{x}</li>)}</ul></div>
             <div data-reveal><span className="caps caps--aqua">Judging</span><ul className="ticks" style={{ marginTop: 10 }}>{c.judging.map((x) => <li key={x}>{x}</li>)}</ul></div>
             <div data-reveal><span className="caps caps--aqua">How to enter</span><ol className="rows" style={{ marginTop: 10 }}>{c.entry.map((x, i) => <li key={x}><b>{i + 1}</b><div><p style={{ color: "var(--ink)" }}>{x}</p></div></li>)}</ol></div>
-            <p className="fine">Prize amounts are proposed and confirmed in the official rules for each event, together with eligibility, schedule and prize conditions. <Link className="link-line" href="/legal/contest-rules">Contest rules</Link>.</p>
+            <p className="fine">Prize amounts are proposed. Prizes, funding, eligibility, judging, age requirements, and official rules must be finalized before any competition is confirmed. <Link className="link-line" href="/legal/contest-rules">Contest rules</Link>.</p>
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default async function CompetitionPage({ params }: { params: Promise<{ sl
             <Link key={o.slug} className="card card--over" href={`/competitions/${o.slug}`} data-reveal>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="card__img"><img src={img(o.image, 800)} alt={o.name} loading="lazy" /></div>
-              <div className="card__b"><span className="caps caps--aqua">{o.prize}</span><h3>{o.name}</h3></div>
+              <div className="card__b"><span className="caps caps--aqua">Proposed {o.prize}</span><h3>{o.name}</h3></div>
             </Link>
           ))}
         </div>

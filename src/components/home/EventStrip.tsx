@@ -29,7 +29,7 @@ function useCountdown(to: string | undefined) {
   return t;
 }
 
-/** "A new paradise every month" — draggable passport cards with live availability and a countdown. */
+/** "Upcoming gatherings" — draggable passport cards with live availability and a countdown. */
 export default function EventStrip({ events, title = true }: { events: StripEvent[]; title?: boolean }) {
   const root = useRef<HTMLElement>(null);
   const wrap = useRef<HTMLDivElement>(null);
@@ -50,8 +50,8 @@ export default function EventStrip({ events, title = true }: { events: StripEven
     <section className="estrip" ref={root} aria-label="Upcoming events">
       <div className="estrip__head">
         <div>
-          {title && <span className="caps caps--aqua eyebrow">A new paradise every month</span>}
-          {title && <h2 className="h2" style={{ marginTop: 18 }} data-split="words">Twelve months. <em className="chrome">Twelve resorts.</em></h2>}
+          {title && <span className="caps caps--aqua eyebrow">Upcoming gatherings</span>}
+          {title && <h2 className="h2" style={{ marginTop: 18 }} data-split="words">Choose your <em className="chrome">paradise.</em></h2>}
         </div>
         {cd && events[0] && (
           <div>

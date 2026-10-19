@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Paradise Club",
-    title: "Paradise Club · Where Paradise Meets Romance",
-    description: "100 extraordinary women. 100 successful men. A new luxury resort every month. Ladies always come free.",
+    title: `Paradise Club · ${SITE.slogan}`,
+    description: `${SITE.headline} Luxury singles vacations, international competitions and exclusive resorts.`,
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Paradise Club" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.jpg"] },

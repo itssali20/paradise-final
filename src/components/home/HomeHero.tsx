@@ -104,10 +104,10 @@ export default function HomeHero({ next }: { next: Next }) {
           <span className="ln">One unforgettable</span>
           <span className="ln l2 chrome">paradise</span>
         </h1>
-        <p className="hero__sub">100 extraordinary women. 100 successful men. Seven days, six nights, one private luxury resort — a new one every month.</p>
+        <p className="hero__sub">Where Paradise Meets Romance. 100 extraordinary women. 100 successful men. Seven days and six nights of luxury, adventure and celebration.</p>
         <div className="hero__cta">
           <Link className="btn btn--chrome" href="/events" data-magnetic>Reserve your room</Link>
-          <Link className="btn btn--ghost" href="/ladies">Ladies come free</Link>
+          <Link className="btn btn--ghost" href="/ladies">Invitation for ladies</Link>
         </div>
       </div>
       <div className="hero__bar">
@@ -115,7 +115,7 @@ export default function HomeHero({ next }: { next: Next }) {
           <div><b>100</b><span>Ladies</span></div>
           <div><b>100</b><span>Gentlemen</span></div>
           <div><b>7</b><span>Days · 6 nights</span></div>
-          <div><b className="chrome">$40K</b><span>Contest prizes</span></div>
+          <div><b className="chrome">$40K</b><span>Proposed prizes</span></div>
         </div>
         {next ? (
           <Link className="hero__next" href={next.href}>

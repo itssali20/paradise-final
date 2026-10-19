@@ -1,7 +1,8 @@
 # Paradise Club · Elite Vacations
 
-Luxury multi-page website + reservation platform for Paradise Club: a new beachfront resort every month,
-100 gentlemen, 100 ladies, seven days / six nights — and ladies always come free.
+Luxury multi-page website + reservation platform for **Elite Vacations by Paradise Club** — *Where Paradise Meets Romance*:
+100 extraordinary women, 100 successful men, seven days / six nights at an exclusive luxury resort, with complimentary
+invitations for selected eligible ladies. Site copy follows the *Revised Website & Brand Copy* (October 2026).
 
 **Stack:** Next.js 15 (App Router, TypeScript) · GSAP 3 (ScrollTrigger, SplitText, Flip, Draggable) · native scrolling ·
 Postgres + Drizzle ORM · Stripe · Resend (email) · Vercel Blob (uploads) · Vercel Cron.
@@ -13,13 +14,13 @@ Postgres + Drizzle ORM · Stripe · Resend (email) · Vercel Blob (uploads) · V
 ### Public website (all GSAP-animated, "Chrome & Tide" design from the logo)
 | Page | Highlights |
 |---|---|
-| `/` Home | Silent cinematic intro (video only → chrome logo rises → headline types in → nav arrives), "Dive in" portal, **…AND WOMEN ALWAYS COME FREE!** giant type with video inside the letters, monthly event passport strip + live countdown, destination wipe slider, pinned experience stack, $40,000 counter + spotlight, 4 room tiers accordion, horizontal evenings, velocity marquees |
+| `/` Home | Silent cinematic intro (video only → chrome logo rises → headline types in → nav arrives), "Dive in" portal, **…for ladies: COMPLIMENTARY BY INVITATION** giant type with video inside the letters, monthly event passport strip + live countdown, destination wipe slider, pinned experience stack, $40,000 counter + spotlight, 4 room tiers accordion, horizontal evenings, velocity marquees |
 | `/events`, `/events/[slug]` | Monthly calendar, live room availability, 4 room tiers with prices, payment-plan timeline, itinerary |
-| `/destinations`, `/destinations/[slug]` | 22 destinations, Flip-animated region filter, detail pages with upcoming dates |
+| `/destinations`, `/destinations/[slug]` | 19 destinations, Flip-animated region filter, detail pages with upcoming dates |
 | `/rooms`, `/villas` | Luxury Room · Ocean-View Room · Ocean-View Suite · Paradise Villa |
-| `/ladies` | Ladies come free, clear "what's covered" table, pageant road, **women's registration** with photo + ID upload |
+| `/ladies` | Exclusive invitation for women, clear "what your invitation may include" table, who we welcome, **women's registration** with photo + ID upload |
 | `/casting`, `/casting/vote` | **Paradise Casting**: ladies apply with 9 photos (3 dress, 3 sportswear, 3 bikini); signed-in gentlemen vote privately (100 hearts each); admin ranks by votes and shortlists the top 120 (100 travel + 20 reserve). Numbers live in `src/content/casting.ts` |
-| `/gentlemen` | Invite her to Paradise, 3 packages, safety |
+| `/gentlemen` | Exclusive experience for gentlemen, "what gentlemen are paying for", 3 packages, safety & privacy |
 | `/competitions`, `/competitions/[slug]` | Miss Paradise, Bikini, Lingerie, Talent — rules, judging, entry forms |
 | `/experience`, `/activities` | Sticky 7-day itinerary, evenings, activities |
 | `/membership`, `/gallery`, `/about`, `/contact` | Members intro, films + masonry gallery with lightbox, 4 options, partner/sponsor forms |
@@ -118,4 +119,8 @@ Logo sources are in `brand-source/` (cleaned transparent PNG).
 ## Before launch — business checks
 - Have a lawyer review `/legal/*`, contest rules/prizes, international-introduction rules and seller-of-travel registration.
 - Stripe reviews dating/travel businesses — apply early and describe the business accurately; never charge contest entry fees.
-- Confirm what "ladies come free" covers per event; confirm photo/model releases for all imagery.
+- Confirm what complimentary invitations for ladies cover per event; confirm photo/model releases for all imagery.
+- Resort buyouts, event schedules, membership functions, airfare subsidies, complimentary attendance and competition prizes
+  must be contractually and operationally confirmed before they are presented as guaranteed (see the footer disclaimer).
+- Events already in a database keep their old room-tier text and destination slugs: edit them in Admin → Events
+  (e.g. move any Bora Bora or Playa del Carmen month, which are no longer listed destinations).

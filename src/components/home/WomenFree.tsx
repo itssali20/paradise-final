@@ -6,7 +6,7 @@ import { VIDEO } from "@/content/media";
 import Video from "@/components/ui/Video";
 
 /**
- * "…AND WOMEN ALWAYS COME FREE!" — giant type cut out of a dark veil so the film plays
+ * "…for ladies: COMPLIMENTARY BY INVITATION" — giant type cut out of a dark veil so the film plays
  * inside the letters. Scrolling zooms through the words until the whole screen is the film.
  */
 export default function WomenFree({ cta = true }: { cta?: boolean }) {
@@ -28,14 +28,14 @@ export default function WomenFree({ cta = true }: { cta?: boolean }) {
 
   const lines = (
     <>
-      <text className="wf__line" x="800" y="200" textAnchor="middle" fontSize="96" fontStyle="italic" fontWeight="400">…and</text>
-      <text className="wf__line" x="800" y="455" textAnchor="middle" fontSize="250" textLength="1480" lengthAdjust="spacingAndGlyphs">WOMEN ALWAYS</text>
-      <text className="wf__line" x="800" y="760" textAnchor="middle" fontSize="330" textLength="1480" lengthAdjust="spacingAndGlyphs">COME FREE!</text>
+      <text className="wf__line" x="800" y="200" textAnchor="middle" fontSize="96" fontStyle="italic" fontWeight="400">…for ladies</text>
+      <text className="wf__line" x="800" y="455" textAnchor="middle" fontSize="240" textLength="1480" lengthAdjust="spacingAndGlyphs">COMPLIMENTARY</text>
+      <text className="wf__line" x="800" y="740" textAnchor="middle" fontSize="250" textLength="1480" lengthAdjust="spacingAndGlyphs">BY INVITATION</text>
     </>
   );
 
   return (
-    <section className="wf" ref={root} aria-label="And women always come free">
+    <section className="wf" ref={root} aria-label="For ladies: complimentary attendance by invitation">
       <div className="media"><Video src={VIDEO.ladiesDesktop} srcMobile={VIDEO.ladiesMobile} poster={VIDEO.ladiesPoster} /></div>
       <div className="wf__glow" />
       <svg className="wf__mask" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" style={{ overflow: "visible" }} aria-hidden="true">
@@ -56,9 +56,9 @@ export default function WomenFree({ cta = true }: { cta?: boolean }) {
         <g className="wf__outline" fill="none" stroke="url(#wf-chrome)" strokeWidth="2.2" fontFamily="'Bodoni Moda Variable', Didot, serif" fontWeight="600">{lines}</g>
       </svg>
       <div className="wf__after">
-        <h3 className="chrome">Ladies attend free.<br /><em>Every event.</em></h3>
+        <h3 className="chrome">Complimentary attendance.<br /><em>By invitation.</em></h3>
         <div className="stack-s" style={{ maxWidth: 460 }}>
-          <p>Complimentary admission for eligible ladies at every Paradise Club resort. Exactly what&apos;s covered is confirmed in writing with your invitation — no surprises.</p>
+          <p>Selected eligible ladies may receive complimentary event admission. Depending on the confirmed package, invitations may also include resort accommodation, dining, entertainment and selected activities. Exact inclusions are provided before invitations are accepted.</p>
           {cta && (
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 20 }}>
               <Link className="btn btn--chrome" href="/ladies#apply" data-magnetic>Apply to attend</Link>

@@ -98,7 +98,7 @@ export async function submitCasting(_: FormState, fd: FormData): Promise<FormSta
   await Promise.all([
     sendEmail(d.email, "Your Paradise Casting application",
       layout(`Thank you, ${esc(first)}.`,
-        `<p>Your application and photos have reached the Paradise Club team. A coordinator reviews every application personally and will contact you to verify your identity.</p><p>Once approved, the club gentlemen vote. The ${CASTING.shortlist} ladies with the most votes are personally invited.</p>`,
+        `<p>Your application and photos have reached the Paradise Club team. A coordinator reviews every application personally and will contact you to verify your identity.</p><p>Once approved, gentlemen members privately share their interest. The ${CASTING.shortlist} applicants with the most interest are shortlisted and personally contacted about a complimentary invitation.</p>`,
         { href: `${SITE.url}/casting`, label: "How casting works" })),
     notifyAdmin(`New casting application — ${d.name}`,
       layout("Casting application", `<p>${esc(d.name)} · ${esc(d.email)} · ${esc(d.country)} · age ${age(born)}</p>`, { href: `${SITE.url}/admin/casting?open=${entry.id}`, label: "Review in admin" })),
@@ -195,7 +195,7 @@ async function notifyEntry(email: string, name: string, status: string) {
       layout(`You're in the casting, ${first}.`, "<p>Your photos are approved and now visible to the club gentlemen for voting. We'll let you know as soon as the shortlist is chosen.</p>"));
   } else if (status === "CHOSEN") {
     await sendEmail(email, "You have been chosen for Paradise Club",
-      layout(`Congratulations, ${first}!`, "<p>The gentlemen have voted and you are on the Paradise Club shortlist. Your coordinator will contact you with your written invitation and travel details.</p>", { href: `${SITE.url}/ladies`, label: "What's included" }));
+      layout(`Congratulations, ${first}!`, "<p>You are on the Paradise Club shortlist. Your coordinator will contact you with your written invitation, setting out exactly what is included.</p>", { href: `${SITE.url}/ladies`, label: "What's included" }));
   } else if (status === "REJECTED") {
     await sendEmail(email, "Your Paradise Casting application",
       layout("Thank you for applying.", "<p>We aren't able to include your application in this casting. You are very welcome to apply again for a future event.</p>"));

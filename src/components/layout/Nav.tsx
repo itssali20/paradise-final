@@ -11,7 +11,7 @@ const QUICK = [
   { href: "/events", label: "Events" },
   { href: "/destinations", label: "Destinations" },
   { href: "/rooms", label: "Rooms" },
-  { href: "/ladies", label: "Ladies free" },
+  { href: "/ladies", label: "For Ladies" },
   { href: "/competitions", label: "Competitions" },
 ];
 

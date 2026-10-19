@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
+import { SITE } from "@/content/site";
 
 /** Installable web app (Add to Home Screen) — the first step of the Phase 3 mobile app. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Paradise Club · Elite Vacations",
     short_name: "Paradise Club",
-    description: "A new luxury singles resort every month. Ladies always come free.",
+    description: `${SITE.program}. ${SITE.slogan}.`,
     start_url: "/account",
     display: "standalone",
     background_color: "#03060b",

@@ -35,7 +35,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
         crumbs={[{ href: "/events", label: "Events" }, { href: `/events/${e.slug}`, label: d?.name ?? e.title }]}
       >
         <Link className="btn btn--chrome" href={`/book/${e.slug}`} data-magnetic>{closed ? "Join the waitlist" : "Reserve your room"}</Link>
-        <Link className="btn btn--ghost" href="/ladies#apply">Ladies · apply free</Link>
+        <Link className="btn btn--ghost" href="/ladies#apply">Ladies · apply to attend</Link>
       </PageHero>
 
       <section className="bg-navy">
@@ -59,7 +59,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
             </div>
             <div className="stack-s" data-reveal>
               <p className="lead">{e.resortName}. {e.resortSummary}</p>
-              <p className="fine">Prices are per package for seven days / six nights. Bringing a lady? Add her for the companion rate shown.</p>
+              <p className="fine">Prices are per package for seven days / six nights. Bringing a guest you met online? Add her at the guest rate shown.</p>
             </div>
           </div>
           <div className="rooms-grid">
@@ -83,7 +83,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
                       <div>
                         <span className="caps caps--dim">Gentleman</span>
                         <b className="chrome-static" style={{ display: "block" }}>{money(r.priceCents, e.currency)}</b>
-                        {r.companionCents > 0 && <span className="fine">+ {money(r.companionCents, e.currency)} with a lady</span>}
+                        {r.companionCents > 0 && <span className="fine">+ {money(r.companionCents, e.currency)} with a guest</span>}
                       </div>
                       {out ? (
                         <span className="btn btn--sm is-disabled">Unavailable</span>

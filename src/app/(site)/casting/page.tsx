@@ -11,8 +11,8 @@ import { getDestination } from "@/content/destinations";
 import { dateRange } from "@/lib/format";
 
 export const metadata: Metadata = {
-  title: "Paradise Casting · ladies apply, gentlemen vote",
-  description: `Apply to join Paradise Club with nine photos. The club gentlemen vote and the ${CASTING.shortlist} ladies with the most votes are invited to paradise, free.`,
+  title: "Paradise Casting",
+  description: `Apply to Paradise Club with nine photos. Approved applicants are reviewed, gentlemen members privately share their interest, and ${CASTING.shortlist} applicants are shortlisted for complimentary invitations.`,
 };
 export const revalidate = 60;
 
@@ -32,22 +32,22 @@ export default async function CastingPage() {
     <>
       <PageHero
         eyebrow="Paradise Casting"
-        title={<>Chosen by <em className="chrome">the gentlemen</em></>}
-        lead={`Thousands of ladies apply with ${total} photos. The club gentlemen vote. The ${CASTING.shortlist} with the most votes are invited to paradise, free.`}
+        title={<>Your invitation <em className="chrome">starts here</em></>}
+        lead={`Apply with ${total} photos and a few lines about yourself. Our team verifies every applicant, gentlemen members privately share their interest, and ${CASTING.shortlist} applicants are shortlisted for complimentary invitations.`}
         image="/media/club-rain.webp"
         className="phero--cast"
         crumbs={[{ href: "/ladies", label: "Ladies" }, { href: "/casting", label: "Casting" }]}
       >
         <Link className="btn btn--chrome" href="#apply" data-magnetic>Apply now</Link>
-        <Link className="btn btn--ghost" href="/casting/vote">Gentlemen · vote</Link>
+        <Link className="btn btn--ghost" href="/casting/vote">Members&apos; board</Link>
       </PageHero>
 
       {/* numbers */}
       <section className="section--tight bg-abyss">
         <div className="container cast-nums">
           <div data-reveal><b className="chrome-static" data-count={String(total)}>{total}</b><span>Photos per lady</span></div>
-          <div data-reveal><b className="chrome-static" data-count={String(CASTING.shortlist)}>{CASTING.shortlist}</b><span>Shortlisted by votes</span></div>
-          <div data-reveal><b className="chrome-static" data-count={String(CASTING.invited)}>{CASTING.invited}</b><span>Ladies travel each month</span></div>
+          <div data-reveal><b className="chrome-static" data-count={String(CASTING.shortlist)}>{CASTING.shortlist}</b><span>Shortlisted</span></div>
+          <div data-reveal><b className="chrome-static" data-count={String(CASTING.invited)}>{CASTING.invited}</b><span>Invitations per event</span></div>
           {counts.applied >= 50 && <div data-reveal><b className="chrome-static" data-count={String(counts.applied)}>{counts.applied}</b><span>Applications so far</span></div>}
         </div>
       </section>
@@ -58,7 +58,7 @@ export default async function CastingPage() {
           <div className="center stack-s" style={{ marginBottom: 56 }}>
             <span className="caps caps--aqua eyebrow" data-reveal>What to send</span>
             <h2 className="h2" data-split="words">Three looks, <em className="chrome">{total} photos</em></h2>
-            <p className="lead" data-reveal>{CASTING.perSet} photos in each outfit so the gentlemen see your style, your energy and your beach look.</p>
+            <p className="lead" data-reveal>{CASTING.perSet} photos in each outfit to show your style, your energy and your personality.</p>
           </div>
           <div className="cast-sets" data-stagger>
             {PHOTO_SETS.map((s, i) => (
@@ -85,13 +85,13 @@ export default async function CastingPage() {
               <li key={s.t}><b>{["I", "II", "III", "IV"][i]}</b><div><h3>{s.t}</h3><p>{s.p}</p></div></li>
             ))}
           </ol>
-          <p className="fine" style={{ marginTop: 22 }}>Why {CASTING.shortlist}? Plans change. We shortlist {CASTING.shortlist - CASTING.invited} more ladies than places so every month welcomes a full {CASTING.invited}.</p>
+          <p className="fine" style={{ marginTop: 22 }}>Why {CASTING.shortlist}? Plans change. We shortlist {CASTING.shortlist - CASTING.invited} more applicants than places so each event can welcome a full {CASTING.invited}.</p>
         </div>
       </section>
 
       <div className="bg-abyss" style={{ paddingBlock: 30 }}>
         <Marquee className="marquee--type" speed={55}>
-          {["Apply", "Get verified", "The gentlemen vote", `Top ${CASTING.shortlist} invited`, "Ladies travel free"].map((w) => <span key={w} className="chrome-static">{w}<span className="sep" /></span>)}
+          {["Apply", "Get verified", "Members share interest", `Top ${CASTING.shortlist} shortlisted`, "Complimentary invitations"].map((w) => <span key={w} className="chrome-static">{w}<span className="sep" /></span>)}
         </Marquee>
       </div>
 
@@ -116,11 +116,11 @@ export default async function CastingPage() {
       <section className="final cast-vote">
         <div className="media shade">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={img("/media/ev-nightclub.webp", 1800)} alt="" loading="lazy" /></div>
         <div className="final__c">
-          <span className="caps caps--aqua">For the gentlemen</span>
-          <h2 className="display chrome" data-split="chars">Your vote<br /><em>decides</em></h2>
-          <p className="lead" style={{ color: "var(--ink)" }}>Club gentlemen privately vote for the ladies they would love to meet. You have {CASTING.voteLimit} hearts. The {CASTING.shortlist} most-voted ladies are invited.</p>
+          <span className="caps caps--aqua">For gentlemen members</span>
+          <h2 className="display chrome" data-split="chars">Share your<br /><em>interest</em></h2>
+          <p className="lead" style={{ color: "var(--ink)" }}>Signed-in gentlemen members can privately mark the applicants they would like to meet, with up to {CASTING.voteLimit} hearts. At the event, every introduction remains a matter of mutual interest, respect and personal choice.</p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link className="btn btn--chrome" href="/casting/vote" data-magnetic>Open the voting board</Link>
+            <Link className="btn btn--chrome" href="/casting/vote" data-magnetic>Open the members&apos; board</Link>
             <Link className="btn btn--ghost" href="/register">Create an account</Link>
           </div>
         </div>

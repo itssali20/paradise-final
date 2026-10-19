@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="foot">
       <Marquee className="marquee--caps" speed={30}>
-        {["Cancún", "Bahamas", "Jamaica", "Bora Bora", "Ibiza", "Amalfi", "Mykonos", "Maldives", "Monaco", "Croatia"].map((d) => (
+        {["Cancún", "Bahamas", "Jamaica", "St. Lucia", "Ibiza", "Amalfi", "Capri", "Maldives", "Monaco", "Croatia"].map((d) => (
           <span key={d} style={{ paddingRight: "3em" }}>{d} ✦</span>
         ))}
       </Marquee>
@@ -15,7 +15,7 @@ export default function Footer() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="foot__logo" src="/brand/logo-600.webp" alt="Paradise Club" loading="lazy" width={600} height={294} />
         <p className="foot__big chrome" data-split="chars">Join us in Paradise</p>
-        <p className="caps caps--dim">A new resort every month · Ladies always come free</p>
+        <p className="caps caps--dim">{SITE.name} · {SITE.pillars}</p>
         <Newsletter />
       </div>
       <div className="foot__cols">
@@ -40,8 +40,10 @@ export default function Footer() {
         </nav>
       </div>
       <p className="fine" style={{ marginTop: 20, position: "relative" }}>
-        Event programming, destinations, guest composition, prizes and property exclusivity are planned features and subject to
-        confirmation in each event&apos;s written terms. Some imagery is illustrative. Guests must be 18 or older.
+        Paradise Club is a proposed luxury travel and membership concept. Resort buyouts, event schedules, membership functions,
+        airfare subsidies, complimentary attendance and competition prizes are subject to contractual and operational confirmation
+        and are not guaranteed until confirmed in each event&apos;s written terms. Terms, fees, eligibility and cancellation policies
+        are disclosed before purchase. Some imagery is illustrative. Guests must be 18 or older.
       </p>
     </footer>
   );

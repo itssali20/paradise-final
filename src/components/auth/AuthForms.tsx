@@ -30,7 +30,7 @@ export function RegisterForm({ next }: { next?: string }) {
         <span className="label">I am a</span>
         <div className="seg">
           <label><input type="radio" name="gender" value="GENTLEMAN" defaultChecked /><b>Gentleman</b><span>Reserve rooms, invite a lady</span></label>
-          <label><input type="radio" name="gender" value="LADY" /><b>Lady</b><span>Ladies always attend free</span></label>
+          <label><input type="radio" name="gender" value="LADY" /><b>Lady</b><span>Complimentary invitations for selected ladies</span></label>
         </div>
       </div>
       <div className="f"><label htmlFor="r-name">Full name</label><input id="r-name" name="name" required autoComplete="name" /></div>

@@ -16,6 +16,7 @@ import { nextEvent, tierPrices, toStrip } from "@/lib/view";
 import { DESTINATIONS } from "@/content/destinations";
 import { COMPETITIONS, EVENINGS, GALLERY } from "@/content/program";
 import { CLIPS, img } from "@/content/media";
+import { SITE } from "@/content/site";
 
 export const revalidate = 60;
 
@@ -34,9 +35,9 @@ export default async function Home() {
       <section className="section bg-glow">
         <div className="container grid-2" style={{ alignItems: "end" }}>
           <div>
-            <span className="caps caps--aqua eyebrow" data-reveal>Not just another vacation</span>
+            <span className="caps caps--aqua eyebrow" data-reveal>The entire resort — exclusively yours</span>
             <p className="statement" style={{ marginTop: 28 }} data-fill>
-              One hundred successful men meet one hundred fascinating women at <em className="chrome">a resort reserved entirely for them.</em>
+              The resort is not simply where you stay. <em className="chrome">It becomes your private world of luxury, friendship, and romance.</em>
             </p>
           </div>
           <div className="stack">
@@ -44,8 +45,9 @@ export default async function Home() {
               <div><b className="chrome-static" data-count="100">100</b><span>Gentlemen</span></div>
               <div><b className="chrome-static" data-count="100">100</b><span>Ladies</span></div>
             </div>
-            <p className="lead" data-reveal>Seven days, six nights, a four- or five-star beachfront property — and a different paradise every month.</p>
-            <div data-reveal><Link className="arrow-link caps" href="/about">Why Elite Vacations <i /></Link></div>
+            <p className="lead" data-reveal>Our vision is to reserve an entire luxury resort for each international gathering: a magnificent beachfront property dedicated to approximately 200 guests, with shared access to pools, beaches, restaurants, lounges, and event spaces. From breakfast overlooking the ocean to glamorous evening celebrations, every part of the stay offers opportunities to connect.</p>
+            <p className="fine" data-reveal>Exclusive resort arrangements are subject to signed property agreements and confirmed event details.</p>
+            <div data-reveal><Link className="arrow-link caps" href="/about">Why we created Paradise Club <i /></Link></div>
           </div>
         </div>
       </section>
@@ -60,9 +62,9 @@ export default async function Home() {
 
       <ExperienceStack
         slides={[
-          { name: "Bikini contest", title: "The bikini", em: "contest", text: "On the beach, in front of the whole resort. $10,000 to the winner.", mixkit: CLIPS.beach, image: "/media/comp-bikini.webp" },
-          { name: "Pool parties", title: "Pool", em: "parties", text: "Music, champagne and 200 singles who came to meet each other.", mixkit: CLIPS.pool, image: "un:1696668827476-8c99c513805c" },
-          { name: "Sunset cruise", title: "The sunset", em: "cruise", text: "Turquoise water and white sand on the horizon.", image: "un:1708246118417-86df0deb72dd" },
+          { name: "Bikini contest", title: "The bikini", em: "contest", text: "A tropical fashion competition with a proposed $10,000 grand prize.", mixkit: CLIPS.beach, image: "/media/comp-bikini.webp" },
+          { name: "Pool parties", title: "Pool", em: "parties", text: "Music, sunshine and fascinating singles from around the world.", mixkit: CLIPS.pool, image: "un:1696668827476-8c99c513805c" },
+          { name: "Sunset cruise", title: "The sunset", em: "cruise", text: "Romantic evenings on turquoise water as the sun goes down.", image: "un:1708246118417-86df0deb72dd" },
           { name: "Masquerade", title: "Masquerade", em: "nights", text: "Masks, costumes and a new theme every night.", image: "/media/ev-masquerade.webp" },
           { name: "Horseback", title: "Horseback", em: "at sunset", text: "Ride the shoreline at golden hour.", mixkit: CLIPS.horseback, image: "un:1618066860737-df4d383c98c3" },
         ]}
@@ -73,16 +75,16 @@ export default async function Home() {
         <div className="media"><Video mixkit={CLIPS.stage} poster="/media/ev-miss-paradise.webp" /></div>
         <Spotlight />
         <div className="comps__c">
-          <span className="caps caps--aqua">Four spectacular competitions</span>
+          <span className="caps caps--aqua">Four spectacular international competitions</span>
           <div className="prize chrome" data-count="40000" data-prefix="$">$40,000</div>
-          <p className="lead" style={{ margin: "0 auto", color: "var(--ink)" }}>in proposed first prizes — $10,000 for each winner, judged live on stage and streamed worldwide.</p>
+          <p className="lead" style={{ margin: "0 auto", color: "var(--ink)" }}>in proposed competition prizes — a proposed $10,000 grand prize for each, celebrating beauty, confidence, elegance, creativity, and extraordinary talent.</p>
           <div className="comp-grid">
             {COMPETITIONS.map((c) => (
               <Link className="comp" key={c.slug} href={`/competitions/${c.slug}`} data-reveal data-cursor="Enter">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={img(c.image, 900)} alt={c.name} loading="lazy" />
                 <div className="comp__b">
-                  <span className="caps caps--aqua">{c.prize} first prize</span>
+                  <span className="caps caps--aqua">Proposed {c.prize} grand prize</span>
                   <h3>{c.name}</h3>
                   <p>{c.short}</p>
                 </div>
@@ -93,7 +95,7 @@ export default async function Home() {
             <Link className="btn btn--chrome" href="/competitions" data-magnetic>Enter a competition</Link>
             <Link className="btn btn--ghost" href="/contact?type=sponsor">Become a sponsor</Link>
           </div>
-          <p className="fine" style={{ margin: "26px auto 0" }}>Proposed prizes. Eligibility, judging and official rules are provided to every entrant before the event.</p>
+          <p className="fine" style={{ margin: "26px auto 0" }}>Prizes, funding, eligibility, judging, age requirements and official rules must be finalized before any competition is confirmed.</p>
         </div>
       </section>
 
@@ -150,12 +152,15 @@ export default async function Home() {
       <section className="final">
         <div className="media"><Video mixkit={CLIPS.turquoise} poster="/media/dest-jamaica.webp" /></div>
         <div className="final__c">
-          <span className="caps caps--aqua">Reservations open</span>
-          <h2 className="display chrome" data-split="chars">Your paradise<br /><em>starts here</em></h2>
-          <p className="lead" style={{ color: "var(--ink)" }}>Choose your month, choose your room, and reserve with a deposit today.</p>
+          <span className="caps caps--aqua">Life is too short for ordinary vacations</span>
+          <h2 className="display chrome" data-split="chars">Your invitation<br /><em>to paradise</em></h2>
+          <p className="lead" style={{ color: "var(--ink)" }}>Perhaps someone you meet will become a lifelong friend. Perhaps a dinner conversation will inspire your next adventure. Or perhaps you will meet someone who makes the vacation truly unforgettable.</p>
+          <p className="lead chrome-static" style={{ fontFamily: "var(--f-display)" }}>We cannot promise that you will find love. We can create extraordinary opportunities to discover it.</p>
+          <span className="caps caps--aqua">{SITE.name} · {SITE.pillars}</span>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link className="btn btn--chrome" href="/events" data-magnetic>See upcoming events</Link>
-            <Link className="btn btn--ghost" href="/ladies#apply">Ladies · apply free</Link>
+            <Link className="btn btn--chrome" href="/membership" data-magnetic>Become a member</Link>
+            <Link className="btn btn--ghost" href="/destinations">Explore destinations</Link>
+            <Link className="btn btn--ghost" href="/ladies#apply">Apply to attend</Link>
           </div>
         </div>
       </section>

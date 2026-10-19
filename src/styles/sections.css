@@ -55,7 +55,7 @@
 .pair b { display: block; font: 400 clamp(3.6rem, 7vw, 6.4rem)/1 var(--f-display); }
 .pair span { font: 600 0.62rem/1.4 var(--f-sans); letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-2); }
 
-/* =========================== WOMEN ALWAYS COME FREE =========================== */
+/* =========================== LADIES · COMPLIMENTARY BY INVITATION =========================== */
 .wf { height: 100svh; background: var(--abyss); overflow: hidden; }
 .wf__mask { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; will-change: transform; }
 .wf__mask text { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01em; }
@@ -284,7 +284,7 @@
 .otext p { margin-top: 20px; max-width: 44ch; color: var(--ink-2); }
 .opt-count { font: 400 clamp(6rem, 16vw, 15rem)/0.8 var(--f-display); text-align: right; color: rgba(255, 255, 255, 0.12); font-variant-numeric: tabular-nums; }
 .opt-count span { color: var(--ink); }
-@media (max-width: 860px) { .opts__c { grid-template-columns: 1fr; align-items: start; padding-top: 100px; } .opt-count { display: none; } .opt-texts { min-height: 560px; } .otext { justify-content: flex-start; } }
+@media (max-width: 860px) { .opts__c { grid-template-columns: 1fr; align-items: start; padding-top: 100px; } .opt-count { display: none; } .opt-texts { min-height: 560px; } .otext { justify-content: flex-start; } .otext p { font-size: .94rem; } }
 
 /* films */
 .film-main { position: relative; display: block; width: 100%; aspect-ratio: 21 / 9; overflow: hidden; border-radius: 28px; margin-top: 50px; }

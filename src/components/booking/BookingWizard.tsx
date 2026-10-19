@@ -98,10 +98,10 @@ export default function BookingWizard({ event, rooms, schedules, initialRoom, ca
 
         <div className="wz-step" style={{ display: step === 1 ? "block" : "none" }}>
           <div className="seg" style={{ marginBottom: 24 }}>
-            <label><input type="radio" name="_pkg" checked={!withLady} onChange={() => setWithLady(false)} /><b>Gentleman</b><span>Just me — meet 100 fascinating women.</span></label>
+            <label><input type="radio" name="_pkg" checked={!withLady} onChange={() => setWithLady(false)} /><b>Gentleman</b><span>Just me — seven days of luxury, adventure and celebration.</span></label>
             <label style={room && room.maxGuests < 2 ? { opacity: 0.4, pointerEvents: "none" } : undefined}>
               <input type="radio" name="_pkg" checked={withLady} onChange={() => setWithLady(true)} disabled={!room || room.maxGuests < 2 || event.womenLeft <= 0} />
-              <b>Gentleman & Lady</b><span>Invite the lady you&apos;ve been talking to · +{room ? fmt(room.companionCents, event.currency) : ""}</span>
+              <b>Gentleman & Guest</b><span>Bring a lady you&apos;ve met online · +{room ? fmt(room.companionCents, event.currency) : ""}</span>
             </label>
           </div>
           <div className="form">
@@ -113,7 +113,7 @@ export default function BookingWizard({ event, rooms, schedules, initialRoom, ca
                 <div className="f"><label htmlFor="b-lname">Her full name *</label><input id="b-lname" name="ladyName" /></div>
                 <div className="f"><label htmlFor="b-lemail">Her email</label><input id="b-lemail" name="ladyEmail" type="email" /></div>
                 <div className="f"><label htmlFor="b-lcountry">Her country</label><input id="b-lcountry" name="ladyCountry" /></div>
-                <p className="fine f--full">We coordinate her stay and contact her to confirm travel details. Airfare is arranged separately unless stated in your confirmation.</p>
+                <p className="fine f--full">We help coordinate her stay and contact her to confirm travel details. Airfare is arranged separately unless stated in your confirmation. Every connection is based on mutual interest and personal choice.</p>
               </>
             )}
             <div className="f f--full"><label htmlFor="b-notes">Anything we should know?</label><textarea id="b-notes" name="notes" placeholder="Arrival plans, room preferences, celebrations…" /></div>
@@ -181,7 +181,7 @@ export default function BookingWizard({ event, rooms, schedules, initialRoom, ca
           <span className="caps caps--aqua">{event.dates}</span>
           <h2 className="h3">{event.name}</h2>
           <div className="sumrow"><span>{room?.name}</span><b>{room ? fmt(room.priceCents, event.currency) : "—"}</b></div>
-          {withLady && room && <div className="sumrow"><span>Lady companion</span><b>{fmt(room.companionCents, event.currency)}</b></div>}
+          {withLady && room && <div className="sumrow"><span>Guest</span><b>{fmt(room.companionCents, event.currency)}</b></div>}
           <div className="sumrow"><span>7 days · 6 nights · all events</span><b>Included</b></div>
           <div className="sumtotal"><span className="caps caps--dim">Total</span><b className="chrome-static">{fmt(total, event.currency)}</b></div>
           <div className="sumrow"><span>Due today</span><b>{fmt(schedule[0]?.amountCents ?? 0, event.currency)}</b></div>

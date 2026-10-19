@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CASTING, PHOTO_SETS } from "@/content/casting";
 import { img } from "@/content/media";
 
-/** Home: Paradise Casting in one screen. Ladies apply with nine photos, gentlemen vote, the top 120 are invited. */
+/** Home: Paradise Casting in one screen. Ladies apply with nine photos, members share interest, the top 120 are shortlisted. */
 export default function CastingTeaser() {
   const total = CASTING.perSet * PHOTO_SETS.length;
   return (
@@ -10,16 +10,16 @@ export default function CastingTeaser() {
       <div className="container grid-2" style={{ alignItems: "center" }}>
         <div>
           <span className="caps caps--aqua eyebrow" data-reveal>Paradise Casting</span>
-          <h2 id="cteaser-h" className="h2" style={{ marginTop: 18 }} data-split="words">Thousands apply. <em className="chrome">The gentlemen choose.</em></h2>
-          <p className="lead" style={{ marginTop: 20 }} data-reveal>Every month ladies from around the world send {total} photos to join Paradise Club. Our gentlemen vote, and the {CASTING.shortlist} ladies with the most votes are invited to paradise, free.</p>
+          <h2 id="cteaser-h" className="h2" style={{ marginTop: 18 }} data-split="words">Your invitation <em className="chrome">starts here.</em></h2>
+          <p className="lead" style={{ marginTop: 20 }} data-reveal>Ladies from around the world apply with {total} photos. Gentlemen members privately share their interest, and the {CASTING.shortlist} applicants with the most interest are shortlisted for complimentary invitations.</p>
           <ol className="cteaser__steps" data-stagger>
             <li><b>{total}</b><span>photos: {PHOTO_SETS.map((s) => `${CASTING.perSet} ${s.short.toLowerCase()}`).join(", ")}</span></li>
-            <li><b>♥</b><span>gentlemen vote privately</span></li>
-            <li><b>{CASTING.shortlist}</b><span>shortlisted, {CASTING.invited} travel</span></li>
+            <li><b>♥</b><span>members share interest privately</span></li>
+            <li><b>{CASTING.shortlist}</b><span>shortlisted, up to {CASTING.invited} invited</span></li>
           </ol>
           <div className="cteaser__cta" data-reveal>
             <Link className="btn btn--chrome" href="/casting#apply" data-magnetic>Ladies · apply</Link>
-            <Link className="btn btn--ghost" href="/casting/vote">Gentlemen · vote</Link>
+            <Link className="btn btn--ghost" href="/casting/vote">Members&apos; board</Link>
           </div>
         </div>
 
@@ -38,7 +38,7 @@ export default function CastingTeaser() {
           </div>
           <div className="cteaser__badge glass">
             <span className="caps caps--aqua">Top {CASTING.shortlist}</span>
-            <b className="chrome-static">invited</b>
+            <b className="chrome-static">shortlisted</b>
           </div>
         </div>
       </div>

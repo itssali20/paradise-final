@@ -21,7 +21,7 @@ export default async function MyBookings() {
                 <tr key={b.id}>
                   <td><b>{b.ref}</b></td>
                   <td>{getDestination(b.event.destinationSlug)?.name}<br /><span className="fine">{dateRange(b.event.startDate, b.event.endDate)}</span></td>
-                  <td>{b.roomType.name}{b.women ? " · + lady" : ""}</td>
+                  <td>{b.roomType.name}{b.women ? " · + guest" : ""}</td>
                   <td><span className={`status status--${bookingTone(b.status)}`}>{label(b.status)}</span></td>
                   <td className="num">{money(b.paidCents, b.currency)} / {money(b.totalCents, b.currency)}</td>
                   <td><Link className="mini-btn" href={`/account/bookings/${b.id}`}>Open</Link></td>

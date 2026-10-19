@@ -31,7 +31,7 @@ export default function ItinerarySticky({ days }: { days: Day[] }) {
             <p>{d.text}</p>
           </div>
         ))}
-        <p className="fine" style={{ marginTop: 30 }}>Illustrative programme. The final schedule depends on the venue, weather, production and contest rules, and is confirmed in your event programme.</p>
+        <p className="fine" style={{ marginTop: 30 }}>Illustrative itinerary only. Actual programming depends on destination, venue availability, weather, production arrangements, and finalized rules.</p>
       </div>
     </div>
   );

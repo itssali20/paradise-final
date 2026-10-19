@@ -1,19 +1,20 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
+import SafetyPrivacy from "@/components/ui/SafetyPrivacy";
 import { PACKAGES } from "@/content/program";
 import { CLIPS, img } from "@/content/media";
 import Video from "@/components/ui/Video";
 
-export const metadata: Metadata = { title: "For gentlemen", description: "Invite her to Paradise. Three packages for gentlemen: Gentleman, Gentleman & Lady, and Paradise Villa." };
+export const metadata: Metadata = { title: "For gentlemen", description: "An exclusive experience for gentlemen: premium luxury vacation packages, face-to-face introductions and shared adventures in a spectacular international setting." };
 
 export default function GentlemenPage() {
   return (
     <>
       <PageHero
-        eyebrow="For gentlemen"
-        title={<>Invite her <em className="chrome">to Paradise</em></>}
-        lead="Stop dreaming in front of a screen. Meet in person, at one of the world's most beautiful resorts."
+        eyebrow="An exclusive experience for gentlemen"
+        title={<>Because your time <em className="chrome">is valuable</em></>}
+        lead="— and your experiences should be extraordinary. Paradise Club is designed for accomplished gentlemen who appreciate luxury travel, meaningful social opportunities, and the finest experiences."
         image="un:1520115736066-2190b58a4b9e"
         crumbs={[{ href: "/gentlemen", label: "Gentlemen" }]}
       >
@@ -23,18 +24,31 @@ export default function GentlemenPage() {
       <section className="split bg-navy">
         <div className="split__media"><div className="media"><Video mixkit={CLIPS.couple} poster={img("un:1507525428034-b723cf961d3e", 1600)} /></div></div>
         <div className="split__txt">
-          <span className="caps caps--aqua eyebrow" data-reveal>The story we hear every week</span>
+          <span className="caps caps--aqua eyebrow" data-reveal>Face to face</span>
           <p className="statement" style={{ marginTop: 24, fontSize: "clamp(1.6rem,2.8vw,2.6rem)" }} data-fill>
-            You&apos;ve been talking for months with a girl in Ukraine, Brazil or across the world. No dinners, no movies, no walks on the beach — just a screen.
+            Professional success does not always make finding a compatible romantic partner easy. Traditional dating platforms can demand months of messaging without a real meeting.
           </p>
-          <p className="lead" style={{ marginTop: 24 }} data-reveal><b style={{ color: "var(--ink)", fontWeight: 500 }}>Here is your chance.</b> Invite her for seven days and six nights in paradise. Even if you&apos;ve known each other for years, you&apos;re both welcome.</p>
-          <blockquote className="quote chrome" data-reveal>And if you don&apos;t click? There are 99 other amazing women at Paradise Club.</blockquote>
+          <p className="lead" style={{ marginTop: 24 }} data-reveal><b style={{ color: "var(--ink)", fontWeight: 500 }}>Instead, imagine</b> seven days of genuine face-to-face introductions, elegant dinners, shared adventures, dancing, and spontaneous conversation in a spectacular international setting.</p>
+          <blockquote className="quote chrome" data-reveal>Photographs cannot replace a smile. Messages cannot replace chemistry.</blockquote>
+        </div>
+      </section>
+
+      <section className="section--tight bg-abyss">
+        <div className="container grid-2">
+          <div>
+            <span className="caps caps--aqua eyebrow" data-reveal>Clear and transparent</span>
+            <h2 className="h2" style={{ marginTop: 18 }} data-split="words">What gentlemen <em className="chrome">are paying for</em></h2>
+          </div>
+          <div className="stack" data-reveal>
+            <p className="lead">Participating gentlemen purchase premium vacation packages supporting the resort experience, hospitality, private events, entertainment, and selected complimentary invitations. The value is a curated luxury vacation and opportunities to meet other eligible adults — <b style={{ color: "var(--ink)", fontWeight: 500 }}>not the purchase of anyone&apos;s attention, companionship, or affection.</b></p>
+            <p>Every connection is based on mutual interest, respect, and personal choice. Whether romance develops or not, the experience is intended to be memorable in its own right.</p>
+          </div>
         </div>
       </section>
 
       <section className="section bg-glow">
         <div className="container">
-          <span className="caps caps--aqua eyebrow" data-reveal>Packages</span>
+          <span className="caps caps--aqua eyebrow" data-reveal>Premium luxury vacation packages</span>
           <h2 className="h2" style={{ marginTop: 18, marginBottom: 46 }} data-split="words">Three ways <em className="chrome">to arrive</em></h2>
           <div className="cards-3">
             {PACKAGES.map((p) => (
@@ -50,20 +64,11 @@ export default function GentlemenPage() {
               </article>
             ))}
           </div>
+          <p className="fine" style={{ marginTop: 22 }} data-reveal>Already talking with someone overseas? <Link className="link-line" href="/membership">Meet before you travel</Link> — the Gentleman &amp; Guest package helps turn an online introduction into a real-world meeting.</p>
         </div>
       </section>
 
-      <section className="section--tight bg-abyss">
-        <div className="container">
-          <span className="caps caps--aqua eyebrow" data-reveal>Your safety</span>
-          <h2 className="h2" style={{ marginTop: 18 }} data-split="words">Feel secure about <em className="chrome">the people you meet</em></h2>
-          <div className="trio" data-stagger>
-            <div><b className="chrome-static">I</b><h3>Met in person</h3><p>Our coordinators meet guests and verify identities before confirming invitations.</p></div>
-            <div><b className="chrome-static">II</b><h3>Dedicated security</h3><p>Professional event security in addition to the hotel&apos;s own team.</p></div>
-            <div><b className="chrome-static">III</b><h3>A private event</h3><p>The resort is reserved for Paradise Club guests and staff wherever the hotel agreement allows.</p></div>
-          </div>
-        </div>
-      </section>
+      <SafetyPrivacy />
     </>
   );
 }

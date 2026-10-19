@@ -6,16 +6,16 @@ import { DESTINATIONS } from "@/content/destinations";
 
 export const metadata: Metadata = {
   title: "Destinations",
-  description: "The Caribbean, the Mediterranean and the islands of the Indian Ocean and Pacific — Paradise Club's luxury singles destinations.",
+  description: "The world is your paradise. Paradise Club's destination vision spans the Caribbean, the Americas and Europe.",
 };
 
 export default function DestinationsPage() {
   return (
     <>
       <PageHero
-        eyebrow="22 destinations · 3 oceans"
+        eyebrow={`${DESTINATIONS.length} destinations`}
         title={<>The world is <em className="chrome">your paradise</em></>}
-        lead="Every month a different four- or five-star beachfront resort, reserved for Paradise Club guests."
+        lead="Our destination vision spans the Caribbean, the Americas, and Europe. Each location will be evaluated for resort quality, accessibility, entertainment opportunities, and suitability for an exclusive Paradise Club event."
         image="/media/dest-greek-islands.webp"
         crumbs={[{ href: "/destinations", label: "Destinations" }]}
       />

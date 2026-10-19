@@ -23,7 +23,7 @@ export default function DivePortal() {
       <div className="dive__t">
         <span className="caps">Crystalline sand · turquoise water</span>
         <div className="display chrome">Dive in.</div>
-        <p>The company of elite international singles, somewhere beautiful, every single month.</p>
+        <p>Turquoise waters, pristine white-sand beaches and fascinating singles from around the world.</p>
       </div>
     </section>
   );

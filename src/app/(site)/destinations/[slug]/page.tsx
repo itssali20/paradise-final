@@ -50,8 +50,8 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <div className="stack" style={{ alignSelf: "end" }}>
             <ul className="ticks" data-stagger>
               {d.highlights.map((h) => <li key={h}>{h}</li>)}
-              <li>Seven days, six nights · 200 elite singles</li>
-              <li>Bikini Contest, Miss Paradise, Tango Night, Sunset Cruise</li>
+              <li>Seven days, six nights · international singles</li>
+              <li>Competitions, Latin dance nights and themed celebrations</li>
             </ul>
           </div>
         </div>

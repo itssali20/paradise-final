@@ -1,4 +1,4 @@
-// Paradise Casting · ladies apply with photos, gentlemen vote, the team invites the top 100.
+// Paradise Casting · ladies apply with photos, gentlemen members privately share interest, the team invites up to 100.
 // Numbers live here so the page, the vote board and the admin ranking always agree.
 
 export const CASTING = {
@@ -20,9 +20,9 @@ export type PhotoSetKey = (typeof PHOTO_SETS)[number]["key"];
 
 export const CASTING_STEPS = [
   { t: "Send your application", p: "Nine recent photos: three in a dress, three in sportswear, three in a bikini. Plus a few lines about you." },
-  { t: "Verified by our team", p: "A coordinator checks every application and your age (18+). Only approved ladies go forward." },
-  { t: "The gentlemen vote", p: "Club gentlemen privately vote for the ladies they would love to meet. Your photos are never public." },
-  { t: "120 chosen, 100 travel", p: "The 120 ladies with the most votes are shortlisted and personally invited. 100 join us in paradise." },
+  { t: "Verified by our team", p: "A coordinator checks every application and your age (18+). Only approved applicants go forward." },
+  { t: "Members share their interest", p: "Signed-in gentlemen members privately mark the applicants they would like to meet. Your photos are never public." },
+  { t: `${CASTING.shortlist} shortlisted, invitations sent`, p: `The ${CASTING.shortlist} applicants with the most interest are shortlisted and personally contacted. Up to ${CASTING.invited} receive a complimentary invitation, with inclusions confirmed in writing.` },
 ];
 
 export const CASTING_RULES = [
@@ -31,4 +31,5 @@ export const CASTING_RULES = [
   "No nudity. Swimwear photos must show a bikini or swimsuit.",
   "Photos are visible only to our team and signed-in club gentlemen, never published.",
   "You can withdraw at any time and we delete your photos.",
+  "Being shortlisted is an invitation, never an obligation. Every connection is based on mutual interest.",
 ];

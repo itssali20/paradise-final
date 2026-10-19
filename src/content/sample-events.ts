@@ -30,8 +30,8 @@ const PLAN: [string, string][] = [
   ["ibiza", "Ibiza clifftop resort"],
   ["amalfi-coast", "Amalfi cliffside hotel"],
   ["greek-islands", "Mykonos beachfront resort"],
-  ["croatia", "Hvar island resort"],
-  ["bora-bora", "Bora Bora lagoon resort"],
+  ["croatia-montenegro", "Adriatic coast resort"],
+  ["st-lucia", "St. Lucia beachfront resort"],
   ["maldives", "Maldives overwater resort"],
 ];
 
@@ -61,7 +61,7 @@ export function sampleEvents(from = new Date()): SampleEvent[] {
       destinationSlug: slug,
       resortName: `${resort} · announced to applicants`,
       resortSummary:
-        "A four- or five-star beachfront property reserved for Paradise Club guests. The hotel name is shared with confirmed applicants once the contract is signed.",
+        "A four- or five-star luxury resort, with the vision of reserving the entire property for Paradise Club guests. Exclusive resort arrangements are subject to signed property agreements; the hotel name is shared with confirmed applicants once the contract is signed.",
       location: d.area,
       heroImage: d.image,
       startDate: start,

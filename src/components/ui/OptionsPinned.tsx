@@ -5,13 +5,13 @@ import { gsap, useGSAP, prefersReduced } from "@/lib/gsap";
 import { img } from "@/content/media";
 
 const OPTIONS = [
-  { k: "Option one", t: "The tropical resort", s: true, p: "The beach is magnificent, but the resort is filled with honeymooners, couples and families. You hoped to meet new people, yet you may end up dining alone.", bg: "un:1630252421399-ddde79af47b3" },
-  { k: "Option two", t: "The typical adults-only club", s: true, p: "The advertisements promise excitement, but the atmosphere, the activities and the other guests may not match your expectations.", bg: "/media/ev-nightclub.webp" },
-  { k: "Option three", t: "The traditional singles resort", s: true, p: "A singles label alone doesn't guarantee shared interests, a compatible atmosphere or a memorable experience.", bg: "un:1580541631971-a0e8ce42e97f" },
-  { k: "Option four", t: "Elite Vacations", s: false, p: "A luxury beachfront escape designed around a private community of 200 guests — 100 women and 100 men — with shared adventures, special events and every opportunity to connect.", bg: "un:1749183563789-ae17d4a952d2" },
+  { k: "Option one", t: "The traditional tropical resort", s: true, p: "You arrive at a magnificent beachfront resort. The ocean is breathtaking, the accommodations are luxurious, and the restaurants are exceptional. Yet nearly everyone around you is honeymooning, celebrating an anniversary, or vacationing with family. The setting is beautiful, but the opportunity to share it with someone special is missing.", bg: "un:1630252421399-ddde79af47b3" },
+  { k: "Option two", t: "The adults-only resort", s: true, p: "Adults-only does not necessarily mean singles-only. You may discover that most guests are couples and that the few available singles have little in common with you. You came looking for excitement and connection, but the experience may not deliver either.", bg: "/media/ev-nightclub.webp" },
+  { k: "Option three", t: "The conventional singles vacation", s: true, p: "Many organized singles trips offer limited opportunities to meet compatible people, inconsistent age groups, unbalanced participation, and repetitive destinations. An expensive journey can still leave you feeling disconnected.", bg: "un:1580541631971-a0e8ce42e97f" },
+  { k: "Option four", t: "Paradise Club", s: false, p: "Paradise Club is designed to bring together approximately 100 successful, charismatic gentlemen and 100 beautiful, fascinating, talented single women for seven days and six nights at an extraordinary luxury destination. Our vision is to reserve an entire resort for a private international gathering.", bg: "un:1749183563789-ae17d4a952d2" },
 ];
 
-/** "Why we created Elite Vacations" — four options, three crossed out, pinned and cross-faded. */
+/** "Why we created Paradise Club" — four options, three crossed out, pinned and cross-faded. */
 export default function OptionsPinned() {
   const root = useRef<HTMLElement>(null);
   const [n, setN] = useState(1);
@@ -34,7 +34,7 @@ export default function OptionsPinned() {
   }, { scope: root });
 
   return (
-    <section className="opts" ref={root} aria-label="Why we created Elite Vacations">
+    <section className="opts" ref={root} aria-label="Why we created Paradise Club">
       <div className="opt-bg" style={{ position: "absolute", inset: 0 }}>
         {OPTIONS.map((o) => (
           // eslint-disable-next-line @next/next/no-img-element
@@ -43,13 +43,14 @@ export default function OptionsPinned() {
       </div>
       <div className="opts__c">
         <div>
-          <span className="caps caps--dim">Why we created Elite Vacations</span>
+          <span className="caps caps--dim">Why we created Paradise Club</span>
           <div className="opt-texts">
             {OPTIONS.map((o) => (
               <div className="otext" key={o.k}>
                 <span className="caps caps--aqua">{o.k}</span>
                 <h3>{o.s ? <s>{o.t}</s> : <em className="chrome">{o.t}</em>}</h3>
                 <p>{o.p}</p>
+                {!o.s && <p className="caps caps--aqua" style={{ marginTop: 22 }}>One magnificent resort. Exceptional company. Unlimited possibilities.</p>}
                 {!o.s && <div style={{ marginTop: 28 }}><Link className="btn btn--chrome" href="/events">Choose Paradise</Link></div>}
               </div>
             ))}

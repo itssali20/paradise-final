@@ -10,7 +10,7 @@ import { img, CLIPS } from "@/content/media";
 
 export const metadata: Metadata = {
   title: "Upcoming events",
-  description: "A new luxury resort every month. Choose your month, choose your room and reserve with a deposit.",
+  description: "Upcoming Paradise Club gatherings at exclusive luxury resorts. Choose your month, choose your room and reserve with a deposit.",
 };
 export const revalidate = 60;
 
@@ -19,15 +19,15 @@ export default async function EventsPage() {
   return (
     <>
       <PageHero
-        eyebrow="A new paradise every month"
+        eyebrow="Upcoming Paradise Club gatherings"
         title={<>Choose your <em className="chrome">month</em></>}
-        lead="Every month Paradise Club reserves a different four- or five-star beachfront resort for 200 elite singles. Seven days, six nights."
+        lead="Seven days and six nights at a four- or five-star luxury resort, with approximately 100 gentlemen and 100 ladies from around the world."
         video={{ mixkit: CLIPS.turquoise, poster: "/media/dest-bahamas.webp" }}
         crumbs={[{ href: "/events", label: "Events" }]}
       >
         <span className="chip chip--aqua"><span className="dot" />Reservations open</span>
         <span className="chip">Pay in full or by deposit</span>
-        <span className="chip">Ladies attend free</span>
+        <span className="chip">Ladies by invitation</span>
       </PageHero>
 
       <EventStrip events={toStrip(events)} title={false} />
@@ -35,7 +35,7 @@ export default async function EventsPage() {
       <section className="section bg-glow" style={{ paddingTop: 40 }}>
         <div className="container">
           <span className="caps caps--aqua eyebrow" data-reveal>The calendar</span>
-          <h2 className="h2" style={{ marginTop: 18, marginBottom: 50 }} data-split="words">Twelve months, <em className="chrome">twelve resorts</em></h2>
+          <h2 className="h2" style={{ marginTop: 18, marginBottom: 50 }} data-split="words">The upcoming <em className="chrome">calendar</em></h2>
           <div style={{ display: "grid", gap: 18 }}>
             {events.map((e, i) => {
               const d = getDestination(e.destinationSlug);
